@@ -1,0 +1,11 @@
+.ce_container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 20px;
+    z-index: 999999;
+}
+
+.ce_play_pause_button {
+    cursor: pointer;
+}

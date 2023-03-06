@@ -1,7 +1,7 @@
 {
     "name": "Wix Elevator",
     "description": "Playing elevator music on editor load",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "manifest_version": 3,
     "icons": {
         "16": "./images/favicon-16x16.png",
@@ -25,7 +25,8 @@
     "permissions": [
         "tabs",
         "scripting",
-        "offscreen"
+        "offscreen",
+        "webNavigation"
     ],
     "host_permissions": [
         "https://editor.wix.com/*",

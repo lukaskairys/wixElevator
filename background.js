@@ -1,20 +1,16 @@
 async function initiateSound(source = 'Elevator-music.mp3', volume = 1) {
-    await createOffscreen();
-    await chrome.runtime.sendMessage(
-        {
-            message: "initiate-offscreen-sound",
-            payload: { source, volume }
-        }
-    );
-}
-
-async function createOffscreen() {
     if (await chrome.offscreen.hasDocument()) return;
     await chrome.offscreen.createDocument({
         url: 'offscreen.html',
         reasons: ['AUDIO_PLAYBACK'],
         justification: 'to play audio'
     });
+    await chrome.runtime.sendMessage(
+        {
+            message: "initiate-offscreen-sound",
+            payload: { source, volume }
+        }
+    );
 }
 
 chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
